@@ -1,278 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Alphacodes101</title>
-    <meta name="google-site-verification" content="Wawfy8ASgmwwHwJhzE2NctONk1lVEcfhR1wUbg6jLFY" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaTube</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link defer rel="'stylesheet" type="text/css" href="css/css.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-198262888-1">
-</script>
+
+    <script>
+        alert("click to accept privacy policy");
 
 
-    
+        var vid = document.getElementById("myVideo");
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-<script language="JavaScript">
-
-    
-  var message = "function disabled";
-  
-  function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
-  
-  if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
-  
-  document.onmousedown = rtclickcheck;
-    
-    alert("click to accept privacy policy!");
-  
-</script>
-
-<style>
-    /* Dropdown Button */
-.dropbtn {
-  background-color:  #019AFF;
-  color: rgb(0, 0, 0);
-  padding: 20px;
-  height:100px;
-  width:200px;
-  font-size: 25px;
-  border: none;
-    border:#3e8e41;
-border: 0mm;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width:200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 30px 30px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-  body{
-    background-image:linear-gradient(to right, rgb(0, 85, 243) , rgb(119, 0, 255));
-}
-hr{
-  background-color: chartreuse;
-  height:auto;
-  width: auto;
-background-size: 0mm;
-
-}
-/* for video size*/
-    
-  video {
-    width: 100%;
-    height: auto;
-  }
-
-      /*glowing text animation styling*/
-   .glow {
-    font-size: 80px;
-    color: #fff;
-    text-align: center;
-    animation: glow 1s ease-in-out infinite alternate;
-  }
-  
-  @-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px rgb(11, 86, 199), 0 0 20px rgb(60, 14, 230), 0 0 30px #056FE7, 0 0 40px #009DE6, 0 0 50px #00CBE6, 0 0 60px #00E6E6, 0 0 70px #1700E6;
-    }
-    
-    to {
-      text-shadow: 0 0 20px rgb(43, 241, 4), 0 0 30px #0657EE, 0 0 40px #00C8FA, 0 0 50px #1B7DDA, 0 0 60px #18D2F3, 0 0 70px #0F82E0, 0 0 80px #00A6E7;
-    }
-  }
-</style>
-    
-      <style>
-      .circular--square {
-          border-top-left-radius: 10% 10%;
-          border-top-right-radius: 10% 10%;
-          border-bottom-right-radius: 10% 10%;
-          border-bottom-left-radius: 10% 10%;
+        function playVid() {
+            vid.play();
         }
-        .circular--square {
-          border-radius: 60%;
+
+        function pauseVid() {
+            vid.pause();
+        }
+    </script>
+
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(8, 103, 192), rgb(4, 0, 255));
+        }
+        /*glowing text animation styling*/
+        
+        .glow {
+            font-size: 80px;
+            color: #fff;
+            text-align: center;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+        
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgb(11, 86, 199), 0 0 20px rgb(60, 14, 230), 0 0 30px #056FE7, 0 0 40px #009DE6, 0 0 50px #00CBE6, 0 0 60px #00E6E6, 0 0 70px #1700E6;
+            }
+            to {
+                text-shadow: 0 0 20px rgb(43, 241, 4), 0 0 30px #0657EE, 0 0 40px #00C8FA, 0 0 50px #1B7DDA, 0 0 60px #18D2F3, 0 0 70px #0F82E0, 0 0 80px #00A6E7;
+            }
         }
     </style>
 </head>
-<body>
-    
-    
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">Alpha codes α α α α</a>
-  
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html " style="text-transform:capitalize">home </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  href="about.html " style="text-transform:capitalize">about us </a>
-      </li>
-  
-      <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="text-transform:capitalize">
-        topics
-        </a>
-        <div class="dropdown-menu">
-              <a class="dropdown-item" href="class11cs.html">class11cs</a>
-              <a class="dropdown-item" href="python.html">python</a>
-              <a class="dropdown-item" href="javascript.html">javascript</a>
-              <a class="dropdown-item" href="html.html">html</a>
-              <a class="dropdown-item" href="mongodb.html">mongodb</a> 
-            <a class="dropdown-item" href="dailylifeproblem.html">Dailylife problem</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <br>
-     <!--company logo-->
-   <center> <img class="circular--square" src="APLHACODESLOGO.jpg" style="font-size:64px" height="200" /></center>  
-     <!--navigation bar-->
-     <header>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="3000">
-               <img src="circuit.jpg"  class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <bold><h5 style="color:chartreuse">static learn</h5></bold>
-              <p style="color:chartreuse">never stop learning.</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-      <img src="websiteimg.jpg" class="d-block w-100" >
-            <div class="carousel-caption d-none d-md-block">
-              <bold><h5 style="color:chartreuse">tech</h5></bold>
-              <p style="color:chartreuse">technology behind the system.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-          <img src="circuit.jpg" class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <bold><h5 style="color:chartreuse">working</h5></bold>
-              <p style="color:chartreuse">learn from every second of your life</p>
-            </div>
-          </div>         
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-  </header>  
-  <!--topic-->    
-<hr>
-    <center><div class="dropdown">
-  <button class="dropbtn">Topics click here !</button>
-  <div class="dropdown-content">
-    <a href="class11cs.html">class11computer</a>
-    <a href="python.html">python</a>
-    <a href="javascript.html">javascript</a>
-    <a href="html.html">HTML</a>
-    <a href="mongodb.html">mongodb</a>
-    <a href="dailylifeproblem.html">Dailylife problem</a>
-    </div>
-</div>
-</center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br> 
-     <!-- about owner of company-->
-<center><button><a href="aboutarjun.html">ABOUT ARJUN JALAJ</a></button>
-<button><a href="aboutrehyan.html">ABOUT REHYAN YADAV</a></button>
-</center>
-<br>
-<br>
-<br>
-<br>
-<!-- Add font awesome icons -->
-<h1><center><a href="https://www.instagram.com/alphacodes101/" class="fa fa-instagram" style="color: orangered;"></a></center></h1>
-    <br>
-    <br>
-    <br>
-    <br>
- <!-- add mail code-->
-<center>
-<button><a href="mailto:codesalpha92@gmail.com?subject=feedback&body =message">click here to send feedback</a></button>
-</center>
-<br>
-<br>
-<br>
-    <!-- add quotes-->
-    <center><h4>hope you learn somethings<p>
-  #static learn
-</p></h4></center>
-    
-    <!-- add video code-->
-    <video autoplay muted loop><source src="static learn.mp4" type="video/mp4"></video>
-    <!-- add glowing effect -->
-<h1 class="glow">ALPHA CODES</h1>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 <body>
+    <h1 class="glow">ALPHA TUBE</h1>
+    <center>
+        <h2>powered by @ALPHACODES</h2>
+    </center>
+
+
+    <iframe width="50%" height="auto" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe>
+    <button onclick="window.location.href='https://www.google.com/'">Continue</button>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+</body>
+
 </html>
