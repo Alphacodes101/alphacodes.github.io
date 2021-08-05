@@ -32,6 +32,19 @@
 
         alert("HELLO FRIENDS, This is REHYAN YADAV, We are providing you the content related to computer science and programming  click to accept privacy policy");
 </script>
+     <script>
+        function openNav() {
+            document.getElementById("mysidepanel").
+            style.width = "250px";
+
+        }
+
+        function closeNav() {
+            document.getElementById("mysidepanel").
+            style.width = "0";
+
+        }
+    </script>
 
 <style>
     /* Dropdown Button */
@@ -117,6 +130,58 @@ background-size: 0mm;
 
 
 </style>
+    <style>
+        /*  code of side pannel of the website*/
+        
+        .sidepanel {
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            height: 390px;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, rgb(79, 3, 141), rgb(65, 0, 243));
+            overflow: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        
+        .sidepanel a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #0f0f0f;
+            display: block;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        
+        .sidepanel a:hover {
+            color: #33ff00;
+        }
+        
+        .sidepanel .closebtn {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            font-size: 20px;
+            color: red;
+        }
+        
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            border-color: #33ff00;
+            letter-spacing: 5px;
+            line-height: 25px;
+        }
+        
+        .openbtn:hover {
+            background-color: #444;
+        }
+    </style>
 
 <style>
   /* fo logo circular */
@@ -229,20 +294,7 @@ background-size: 0mm;
   </div>
 </div>
 </center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+   <br>
     <br>
     <br>
     <br>
@@ -252,41 +304,33 @@ background-size: 0mm;
 
 
 
- <!-- about owner of company-->
-  <center> <button onclick="window.location.href='aboutarjun.html'">ABOUT ARJUN JALAJ</button>
-           <button onclick="window.location.href='aboutrehyan.html'">ABOUT REHYAN YADAV</button>
-  </center>
-<br>
-<br>
-<br>
-<br>
-      <center><i class="fa fa-youtube-play " style="font-size:48px;color:red " href="youtube.com "></i>
-        <button onclick="window.location.href='https://www.youtube.com/channel/UC8rANohWeKSl5VA6a9GMdCw' ">our youtube channel </button></center>
+
+
+    <div id='mysidepanel' class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">close x</a>
+        <a href="aboutarjun.html">ABOUT ARJUN</a>
+        <a href="aboutrehyan.html">ABOUT REHYAN YADAV</a>
+        <a href="alphatube.html">@ALPHATUBE(video)</a>
+        <a href="https://www.youtube.com/channel/UC8rANohWeKSl5VA6a9GMdCw"><i class="fa fa-youtube-play " style="font-size:48px;color:red " href="youtube.com "></i>YOUTUBE</a>
+        <a href="https://www.instagram.com/alphacodes101/"><i class="fa fa-instagram" style="color: orangered; font-size:64px" height="200" "></i>INSTAGRAM</a>
+     </div>
+    <button class="openbtn" onclick="openNav()">CLICK FOR MORE ABOUT US </button>
     <br>
     <br>
     <br>
-    <center> <h4 style="color:red;">CLICK FOR INSTAGRAM>>></h4> 
-        <h4 style="color:red; font-size:64px" height="200">&darr;</h4></center>
-<!-- Add font awesome icons -->
-<h1><center><a href="https://www.instagram.com/alphacodes101/" class="fa fa-instagram" style="color: orangered; font-size:64px" height="200" "></a></center></h1>
-    <br>
-    <br>
-    <center> <h4  style="color:red; ">CLICK FOR VIDEO >>></h4>
-        <h4 style="color:red; font-size:64px " height="200 ">&darr;</h4></center>
-    <center> <button onclick="window.location.href='alphatube.html'">ALPHA TUBE </button></center>
     <br>
     <br>
     <br>
     <br>
              <!-- add mail code-->
-<center>
-<button><a href="mailto:codesalpha92@gmail.com?subject=feedback&body =message">click here to send feedback</a></button>
-</center>
+   <center>
+            <button><a href="mailto:codesalpha92@gmail.com?subject=feedback&body =message">click here to send feedback</a></button>
+   </center>
        <br>
        <br>
-         <center>
-                <button><a href="mailto:codesalpha92@gmail.com?subject=for contact us&body =message">for contact us </a></button>
-            </center>
+    <center>
+            <button><a href="mailto:codesalpha92@gmail.com?subject=for contact us&body =message">for contact us </a></button>
+    </center>
 <br>
 <br>
 <br>
@@ -294,16 +338,13 @@ background-size: 0mm;
     <center><h4>HOPE YOU LEARN SOMETHING<p>
   #STATIC #LEARN
 </p></h4></center>
-
 <!-- add video code-->
     <video autoplay muted loop>
   <source src="static learn.mp4" type="video/mp4">
-  
 Your browser does not support the video tag.
 </video>
 <!-- add glowing effect -->
 <h1 class="glow">ALPHA CODES</h1>
-
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
