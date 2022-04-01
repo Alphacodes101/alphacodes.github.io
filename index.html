@@ -7,374 +7,181 @@
     <link rel="icon" href="favicon.ico" type="image/icon type">
  <meta name="description" content="Click and join us for knowledgeable and exciting content related to computer science." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link defer rel="'stylesheet" type="text/css" href="css/css.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-<script language="JavaScript">
-
-    
-  var message = "function disabled";
-  
-  function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
-  
-  if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
-  
-    document.onmousedown = rtclickcheck;
-
-        alert("HELLO FRIENDS, This is REHYAN YADAV, We are providing you the content related to computer science and programming  click to accept privacy policy");
-</script>
-     <script>
-        function openNav() {
-            document.getElementById("mysidepanel").
-            style.width = "250px";
-
-        }
-
-        function closeNav() {
-            document.getElementById("mysidepanel").
-            style.width = "0";
-
-        }
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    
-    /* footer text design */
-
-em{
-    font-size: 20px;
-            cursor: pointer;
-            background-color: #111;
-            color: white;
-         
-            letter-spacing: 5px;
-            line-height: 25px;
-
-  }
-  
-
-    /* Dropdown Button */
-.dropbtn {
-  background-color:  #019AFF;
-  color: rgb(0, 0, 0);
-  padding: 20px;
-  height:100px;
-  width:200px;
-  font-size: 25px;
-  border: none;
-    border:#3e8e41;
-border: 0mm;
+  * {
+    margin: 0;
+    padding: 0;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+    background: #131313;
+    font-family:'Helvetica Neue', sans-serif;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width:200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 30px 30px;
+h1 a {
+  font-size: 50px;
+  color: #2eacbf;
   text-decoration: none;
-  display: block;
+  text-transform: uppercase;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-  body{
-    background-image:linear-gradient(to right, rgb(0, 85, 243) , rgb(119, 0, 255));
+.popover {
+   display: none;
+   box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
 }
-hr{
-  background-color: chartreuse;
-  height:auto;
-  width: auto;
-background-size: 0mm;
 
+.popover:target {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-/* for video size*/
-    
-  video {
-    width: 100%;
-    height: auto;
-  }
 
-      /*glowing text animation styling*/
-   .glow {
-    font-size: 80px;
-    color: #fff;
-    text-align: center;
-    animation: glow 1s ease-in-out infinite alternate;
-  }
-  
-    @-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px rgb(11, 86, 199), 0 0 20px rgb(60, 14, 230), 0 0 30px #056FE7, 0 0 40px #009DE6, 0 0 50px #00CBE6, 0 0 60px #00E6E6, 0 0 70px #1700E6;
-    }
-    
-    to {
-      text-shadow: 0 0 20px rgb(43, 241, 4), 0 0 30px #0657EE, 0 0 40px #00C8FA, 0 0 50px #1B7DDA, 0 0 60px #18D2F3, 0 0 70px #0F82E0, 0 0 80px #00A6E7;
-    }
-  }
+.popover .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 0;
+  height: 0;
+  color: #fff;
+  background-color: #191919;
+  animation: 1s grow ease forwards;
+  text-align: center;
+}
 
+.nav_list  {
+  list-style-type: none;
+}
 
+.nav_list a {
+  text-decoration: none;
+  font-size: 50px;
+  color: #fff;
+}
+
+.nav_list_item {
+  height: 100%;
+  overflow: hidden;
+}
+
+.nav_list li {
+  padding: 15px 0;
+  text-transform: uppercase;
+  transform: translateY(200px);
+  opacity: 0;
+  animation: 2s slideUp ease forwards .5s;
+  position: relative;
+}
+
+.nav_list li::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  bottom: 10px;
+  background: #00ccff; 
+  transition: all .5s ease;
+}
+
+.nav_list li:hover:before {
+      width: 100%;
+}
+
+.popover p {
+  padding: 50px;
+  opacity: 0;
+  animation: 1s fadeIn ease forwards 1s;
+}
+
+.popover .close::after {
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #004381;
+  color: #fff;
+  content: "×";
+  cursor: pointer;
+  opacity: 0; 
+  animation: 1s fadeIn ease forwards .5s;
+}
+
+@keyframes grow {
+  100% {
+    height: 90%;
+    width: 90%;
+ }
+}
+
+@keyframes fadeIn {
+100% {
+  opacity: 1;
+ }
+}
+
+@keyframes slideUp {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 </style>
-    <style>
-        /*  code of side pannel of the website*/
-        
-        .sidepanel {
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            height: 500px;
-            top: 0;
-            left: 0;
-            background-image: linear-gradient(to right, rgb(79, 3, 141), rgb(65, 0, 243));
-            overflow: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-        
-        .sidepanel a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 20px;
-            color: #0f0f0f;
-            display: block;
-            transition: 0.3s;
-            font-weight: bold;
-        }
-        
-        .sidepanel a:hover {
-            color: #33ff00;
-        }
-        
-        .sidepanel .closebtn {
-            position: absolute;
-            top: 0;
-            right: 15px;
-            font-size: 20px;
-            color: red;
-        }
-        
-        .openbtn {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #111;
-            color: white;
-            border-color: #33ff00;
-            letter-spacing: 5px;
-            line-height: 25px;
-        }
-        
-        .openbtn:hover {
-            background-color: #444;
-        }
-    </style>
 
-<style>
-  /* fo logo circular */
-  .circular--square {
-      border-top-left-radius: 10% 10%;
-      border-top-right-radius: 10% 10%;
-      border-bottom-right-radius: 10% 10%;
-      border-bottom-left-radius: 10% 10%;
-    }
-    .circular--square {
-      border-radius: 60%;
-    }
-</style>
+
 </head>
-<body>
+<body style="background-color:#131313;">
+  <div class="container">
+    <h1>
+       <a href="#menu" style="  background: linear-gradient( to right, #f32170, #ff6b08,#cf23cf, #eedd44);-webkit-text-fill-color: transparent;-webkit-background-clip: text;">Click me</a>
+   
+      </h1>
   
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">Alpha codes α α α α</a>
-  
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html " style="text-transform:capitalize">home </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  href="about.html " style="text-transform:capitalize">about us </a>
-      </li>
-  
-      <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="text-transform:capitalize">
-        topics
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="class11cs.html">Class 11 computer</a>
-          <a class="dropdown-item" href="python.html">Python</a>
-          <a class="dropdown-item" href="java.html">Java</a>
-              <a class="dropdown-item" href="javascript.html">Javascript</a>
-              <a class="dropdown-item" href="html5.html">HTML</a>
-              <a class="dropdown-item" href="mongodb.html">MongoDB</a>
-              <a class="dropdown-item" href="dailylifeproblem.html">Daily Life problem</a>
+   <div class="popover" id="menu">
+    <div class = 'content'>
+     <a href="#" class="close"></a>
+      <div class = 'nav'>
+       <ul class = 'nav_list'>
+         
+       <div class = 'nav_list_item'>
+       <li><a href="http://alphacodes.epizy.com/index.html" style="  background: linear-gradient( to right, #f32170, #ff6b08,#cf23cf, #eedd44);-webkit-text-fill-color: transparent;-webkit-background-clip: text;">CLICK TO ENTER IN WEBSITE</a></li>
+       <p style="font-size:30px;">&#128512; &#128153;</p>
+       <center>
+        <div class = "about-right">
+               
+          <div class="credit" style="color:red">Made with <span style="color:tomato">❤</span> by <a href="https://www.instagram.com/rehyan_yadav101/?hl=en">rehyan yadav</a></div>
         </div>
-      </li>
-    </ul>
-  </nav>
-  <br>
-  
-  <!--company logo-->
-   <center> <img class="circular--square" src="APLHACODESLOGO.jpg" style="font-size:64px" height="200" /></center>  
-   <br>
-   <br>
-   <br>
-  <!--navigation bar-->
-  <header>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="3000">
-               <img src="carisouleimage1.jpg" class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <bold><h5 style="color:chartreuse">static learn</h5></bold>
-              <p style="color:chartreuse">never stop learning.</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-    <img src="carisouleimage2.jpg" class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <bold><h5 style="color:chartreuse">tech</h5></bold>
-              <p style="color:chartreuse">technology behind the system.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-          <img src="carisouleimage1.jpg"class="d-block w-100">
-            <div class="carousel-caption d-none d-md-block">
-              <bold><h5 style="color:chartreuse">working</h5></bold>
-              <p style="color:chartreuse">learn from every second of your life</p>
-            </div>
-          </div>
-          
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-  </header>
-
-   
-   
-   
-  <!--topic--> 
-   
-<hr>
-    <center><div class="dropdown">
-  <button class="dropbtn">Topics click here !</button>
-  <div class="dropdown-content">
-    <a class="dropdown-item" href="class11cs.html">Class 11 computer</a>
-    <a class="dropdown-item" href="java.html">Java</a>
-    <a href="python.html">python</a>
-    <a href="javascript.html">javascript</a>
-    <a href="html5.html">HTML</a>
-    <a href="mongodb.html">mongodb</a>
-    <a href="dailylifeproblem.html">Daily life problem</a>
-  </div>
+        </center>
+     </ul>
+     </div>
+     
+    </div>
+    </div>
+    
+    </div>
+    <center>
+<div class = "about-right">
+       
+  <div class="credit" style="color:red">Made with <span style="color:tomato">❤</span> by <a href="https://www.instagram.com/rehyan_yadav101/?hl=en">rehyan yadav</a></div>
 </div>
 </center>
-   <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-
-
-
-    <div id='mysidepanel' class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">close x</a>
-        <a href ="https://codewithrehyan.blogspot.com/">BLOG</a>
-        <a href="aboutarjun.html">ABOUT ARJUN</a>
-        <a href="aboutrehyan.html">ABOUT REHYAN YADAV</a>
-        <a href="alphatube.html">@ALPHATUBE(video)</a>
-        <a href="https://www.youtube.com/channel/UC8rANohWeKSl5VA6a9GMdCw"> <i class="fa fa-youtube-play " style="font-size:48px;color:red " href="youtube.com "></i>YOUTUBE</a>
-        <a href="https://www.instagram.com/alphacodes101/"> <i class="fa fa-instagram" style="color: orangered; font-size:64px" height="200" "></i>INSTAGRAM</a>
-        <a href="https://www.facebook.com/profile.php?id=100077276373410"> <i class="fa fa-facebook"style="color: skyblue; font-size:64px" height="200" ></i>FACEBOOK</a>
-            	
-            </div>
-    <button class="openbtn" onclick="openNav()">CLICK FOR MORE ABOUT US </button>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-             <!-- add mail code-->
-   <center>
-            <button><a href="mailto:codesalpha92@gmail.com?subject=feedback&body =message">click here to send feedback</a></button>
-   </center>
-       <br>
-       <br>
-    <center>
-            <button><a href="mailto:codesalpha92@gmail.com?subject=for contact us&body =message">for contact us </a></button>
-    </center>
-<br>
-<br>
-    
-           <!-- about what we are proving in this website-->
-            
-           
-            <strong style="font-size:25px"><em>what we are providing?</em></strong>
-<strong style ="font-size:22px"><p>We are providing you the computer science related content. Through this website you can read notes of some topics such as javascript,python,HTML and many more so,
-    connect us through our many other  soical platform  such as instagram<i class="fa fa-instagram" style="color: orangered; font-size:64px" height="200" "></i> and youtube<i class="fa fa-youtube-play " style="font-size:48px;color:red " href="youtube.com "></i> for latest update.
-  Link is given inside ( MORE ABOUT US).
-so, go and join quickly for knowledgeable and exciing content. &#128519; &#128519; &#128519;</p>
-</strong>
-<!-- add quotes-->
-    <center><h4>HOPE YOU LEARN SOMETHING<p>
-  #STATIC #LEARN
-</p></h4></center>
-<!-- add video code-->
-    <video autoplay muted loop>
-  <source src="static learn.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-<!-- add glowing effect -->
-<h1 class="glow">ALPHA CODES</h1>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 </body>
 </html>
