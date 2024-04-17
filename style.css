@@ -29,7 +29,7 @@ body {
 	border-radius: 10px;
 	box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
 	background: white;
-	margin: 5px;
+	margin: px;
 	transition: 1s;
 }
 
@@ -72,72 +72,6 @@ body {
 
 
 
-@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap");
-
-h1 {
-  --initial-delay: 1s;
-  --letter-delay: 0.2s;
-
-  color: #eee;
-  font-family: Changa, fantasy;
-  text-transform: uppercase;
-  font-size:40px;
-  font-weight: 900;
-  animation: hollywood 4s var(--initial-delay) both;
-
-  display: flex;
-
-  span {
-    --start-delay: var(--initial-delay);
-
-    display: block;
-    text-align: center;
-
-    opacity: 0;
-    animation: zichtbaar 1s var(--start-delay) both;
-
-    &:nth-child(2) {
-      --start-delay: calc(var(--initial-delay) + (var(--letter-delay) * 1));
-    }
-    &:nth-child(3) {
-      --start-delay: calc(var(--initial-delay) + (var(--letter-delay) * 2));
-    }
-    &:nth-child(4) {
-      --start-delay: calc(var(--initial-delay) + (var(--letter-delay) * 3));
-    }
-    &:nth-child(5) {
-      --start-delay: calc(var(--initial-delay) + (var(--letter-delay) * 4));
-    }
-    &:nth-child(6) {
-      --start-delay: calc(var(--initial-delay) + (var(--letter-delay) * 5));
-    }
-    &:nth-child(7) {
-      --start-delay: calc(var(--initial-delay) + (var(--letter-delay) * 6));
-    }
-  }
-}
-
-@keyframes hollywood {
-  0% {
-    gap: 0vw;
-  }
-  100% {
-    gap: 8vw;
-  }
-}
-
-@keyframes zichtbaar {
-  0% {
-    opacity: 0;
-    filter: blur(1em);
-    transform: translateY(-100px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0em);
-    transform: translateY(0);
-  }
-}
 
 /* Boilerplate */
 
@@ -147,16 +81,12 @@ h1 {
   box-sizing: border-box;
 }
 
-body,
-html {
-  height: 100%;
-  background: #111;
-}
+
 
 body {
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at 100%, #fff3, #111);
+  background: radial-gradient(circle at 100%, rgb(0, 0, 0), #111);
 }
 
 
@@ -181,7 +111,7 @@ button {
 
 .button {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1px;
   font-weight: 500;
   width: 433px;
   border-radius: 9999rem;
