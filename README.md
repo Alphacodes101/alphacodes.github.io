@@ -22,8 +22,8 @@ We offer a wide range of tech services, including:
 
 Ready to take your tech projects to the next level? Contact us today to discuss your requirements and get a personalized quote.
 
-- Email: info@alphacodes.com
-- Phone: +1 123-456-7890
+- Email: codesalpha92@gmail.com
+- Phone: +91 8102448912
 - Website: [alphacodes.com](https://alphacodes101.github.io/alphacodes.com/)
 
 Let us be your trusted tech partner and help you unlock your full potential!
