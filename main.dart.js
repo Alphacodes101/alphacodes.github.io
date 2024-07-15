@@ -41875,7 +41875,7 @@ A.apd.prototype={
 $0(){var s=0,r=A.z(t.H)
 var $async$$0=A.A(function(a,b){if(a===1)return A.w(b,r)
 while(true)switch(s){case 0:s=2
-return A.G(A.o6("https://rehyanyadav.github.io/alphapages.github.io/"),$async$$0)
+return A.G(A.o6("https://alphacodes101.github.io/Alpha_study/"),$async$$0)
 case 2:return A.x(null,r)}})
 return A.y($async$$0,r)},
 $S:8}
