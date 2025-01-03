@@ -15780,7 +15780,7 @@ a2=n?A.Z(10,B.f.gl(0)>>>16&255,B.f.gl(0)>>>8&255,B.f.gl(0)&255):A.Z(10,B.l.gl(0)
 if(k==null)k=n?B.nv:B.FE
 if(h==null)h=k
 if(d==null)d=n?B.d2:B.f
-if(j==null)j=n?B.Gd:B.bu
+if(j==null)j=n?B.Ge:B.bu
 if(d1==null){if(n)a3=B.Fc
 else{p=d3.f.h(0,500)
 p.toString
@@ -43290,7 +43290,7 @@ case 4:throw A.c("Could not launch "+a)
 case 3:return A.A(null,r)}})
 return A.B($async$kK,r)},
 F(a){var s=this,r=null,q=t.p
-return new A.MV(B.Gg,A.aD1(A.a([new A.dX(B.bE,r,r,new A.be(B.Il,A.uW(r,B.JY,r,r,new A.a7f(a),r,r),r),r),A.BE(B.dT,B.Kc,new A.a7g(a),r,B.a_H,B.iQ,r),B.aD,A.BE(B.dT,B.K2,new A.a7h(a),r,B.a_m,B.iQ,r),B.aD,A.BE(B.dT,B.K9,new A.a7i(a),r,B.a_P,B.iQ,r),B.aD,A.BE(B.dT,B.K0,new A.a7j(a),r,B.a_i,B.iQ,r),B.aD,A.cu(A.a([B.lN,A.ef(!1,r,!0,B.lM,r,!0,r,r,r,r,r,r,r,r,r,new A.a7k(s),r,r,r,r),A.ef(!1,r,!0,B.lJ,r,!0,r,r,r,r,r,r,r,r,r,new A.a7l(s),r,r,r,r),A.ef(!1,r,!0,B.lL,r,!0,r,r,r,r,r,r,r,r,r,new A.a7m(s),r,r,r,r),B.iK,A.ef(!1,r,!0,B.kr,r,!0,r,r,r,r,r,r,r,r,r,new A.a7n(s),r,r,r,r),A.ef(!1,r,!0,B.lK,r,!0,r,r,r,r,r,r,r,r,r,new A.a7o(s),r,r,r,r)],q),B.m,B.z,B.q)],q),r,r,!1),r)}}
+return new A.MV(B.Gc,A.aD1(A.a([new A.dX(B.bE,r,r,new A.be(B.Il,A.uW(r,B.JY,r,r,new A.a7f(a),r,r),r),r),A.BE(B.dT,B.Kc,new A.a7g(a),r,B.a_H,B.iQ,r),B.aD,A.BE(B.dT,B.K2,new A.a7h(a),r,B.a_m,B.iQ,r),B.aD,A.BE(B.dT,B.K9,new A.a7i(a),r,B.a_P,B.iQ,r),B.aD,A.BE(B.dT,B.K0,new A.a7j(a),r,B.a_i,B.iQ,r),B.aD,A.cu(A.a([B.lN,A.ef(!1,r,!0,B.lM,r,!0,r,r,r,r,r,r,r,r,r,new A.a7k(s),r,r,r,r),A.ef(!1,r,!0,B.lJ,r,!0,r,r,r,r,r,r,r,r,r,new A.a7l(s),r,r,r,r),A.ef(!1,r,!0,B.lL,r,!0,r,r,r,r,r,r,r,r,r,new A.a7m(s),r,r,r,r),B.iK,A.ef(!1,r,!0,B.kr,r,!0,r,r,r,r,r,r,r,r,r,new A.a7n(s),r,r,r,r),A.ef(!1,r,!0,B.lK,r,!0,r,r,r,r,r,r,r,r,r,new A.a7o(s),r,r,r,r)],q),B.m,B.z,B.q)],q),r,r,!1),r)}}
 A.a7f.prototype={
 $0(){A.bL(this.a,!1).e4()},
 $S:0}
@@ -43608,7 +43608,7 @@ A.at8.prototype={
 $1(a){return B.il},
 $S:83}
 A.RU.prototype={
-F(a){var s="assets/logo.gif",r=null
+F(a){var s="assets/logo01.gif",r=null
 return A.co(r,A.mq(A.cu(A.a([this.Dd(B.J3,s,"Web/App Dev & Tools"),B.ej,this.Dd(B.J2,s,"Alpha Study (Learning new\n tech skills)"),B.ej,this.Dd(B.J4,s,"PRICING & PLANS")],t.p),B.m,B.a6,B.q),r,r,r,B.aj),B.v,r,r,B.Co,r,r,r,r,r,r,r)},
 Dd(a,b,c){var s=null,r=A.bb(20),q=B.c.aD(127.5),p=A.a([new A.aH(2,B.w,A.Z(q,B.o.gl(0)>>>16&255,B.o.gl(0)>>>8&255,B.o.gl(0)&255),B.fr,15)],t.V)
 q=A.Lq(A.Z(q,B.bN.gl(0)>>>16&255,B.bN.gl(0)>>>8&255,B.bN.gl(0)&255),2)
@@ -43992,7 +43992,7 @@ A.Cd.prototype={
 a1(){return new A.Xv()}}
 A.Xv.prototype={
 F(a){var s=null,r=A.bb(20),q=t.p
-return A.co(s,A.cu(A.a([A.dj(A.iv("assets/logo.gif",s,B.at,B.dH,s,s),300,200),A.cu(A.a([new A.vq("Register",new A.av3(a),s),B.Ak,new A.vq("Services",new A.av4(a),s),B.Ak,new A.vq("Pricing",new A.av5(a),s)],q),B.m,B.fo,B.q)],q),B.m,B.fp,B.q),B.v,s,s,new A.bI(B.A,s,s,r,B.Mx,s,B.L),s,80,B.Iv,s,s,s,1/0)}}
+return A.co(s,A.cu(A.a([A.dj(A.iv("assets/logo01.gif",s,B.at,B.dH,s,s),300,200),A.cu(A.a([new A.vq("Register",new A.av3(a),s),B.Ak,new A.vq("Services",new A.av4(a),s),B.Ak,new A.vq("Pricing",new A.av5(a),s)],q),B.m,B.fo,B.q)],q),B.m,B.fp,B.q),B.v,s,s,new A.bI(B.A,s,s,r,B.Mx,s,B.L),s,80,B.Iv,s,s,s,1/0)}}
 A.av3.prototype={
 $0(){var s=A.cP(new A.av2(),null,t.z)
 A.bL(this.a,!1).cv(s)},
@@ -44478,7 +44478,7 @@ this.bz()
 this.dq()}}
 A.Po.prototype={
 F(a){var s=null
-return A.co(s,A.cu(A.a([new A.be(B.Ih,A.dj(A.iv("assets/logo.jpg",s,B.at,s,s,s),500,s),s),B.Ao,A.uW(s,B.JZ,s,s,this.d,s,s),B.Um],t.p),B.m,B.z,B.q),B.v,s,s,s,s,100,B.It,s,s,s,s)}}
+return A.co(s,A.cu(A.a([new A.be(B.Ih,A.dj(A.iv("assets/logo01.gif",s,B.at,s,s,s),500,s),s),B.Ao,A.uW(s,B.JZ,s,s,this.d,s,s),B.Um],t.p),B.m,B.z,B.q),B.v,s,s,s,s,100,B.It,s,s,s,s)}}
 A.rg.prototype={
 a1(){return new A.Yv(null,null)}}
 A.Yv.prototype={
@@ -95081,9 +95081,9 @@ B.GM=new A.j(1,0.25882352941176473,0.6470588235294118,0.9607843137254902,B.e)
 B.eJ=new A.j(1,0.12941176470588237,0.5882352941176471,0.9529411764705882,B.e)
 B.G3=new A.j(1,0.11764705882352941,0.5333333333333333,0.8980392156862745,B.e)
 B.nq=new A.j(1,0.09803921568627451,0.4627450980392157,0.8235294117647058,B.e)
-B.Ge=new A.j(1,0.08235294117647059,0.396078431372549,0.7529411764705882,B.e)
+B.Gf=new A.j(1,0.08235294117647059,0.396078431372549,0.7529411764705882,B.e)
 B.nh=new A.j(1,0.050980392156862744,0.2784313725490196,0.6313725490196078,B.e)
-B.Pe=new A.bV([50,B.Fk,100,B.hb,200,B.cf,300,B.F8,400,B.GM,500,B.eJ,600,B.G3,700,B.nq,800,B.Ge,900,B.nh],t.pl)
+B.Pe=new A.bV([50,B.Fk,100,B.hb,200,B.cf,300,B.F8,400,B.GM,500,B.eJ,600,B.G3,700,B.nq,800,B.Gf,900,B.nh],t.pl)
 B.o=new A.iC(B.Pe,1,0.12941176470588237,0.5882352941176471,0.9529411764705882,B.e)
 B.mL=new A.b_(B.o,2,B.y,-1)
 B.Ej=new A.j(1,0.5098039215686274,0.6941176470588235,1,B.e)
@@ -95501,10 +95501,10 @@ B.G2=new A.j(1,0.3254901960784314,0.23137254901960785,0.8549019607843137,B.e)
 B.jK=new A.j(1,0.0196078431372549,0.0196078431372549,0.0196078431372549,B.e)
 B.hd=new A.j(1,0,0.5490196078431373,1,B.e)
 B.jL=new A.j(1,0,0.5176470588235295,1,B.e)
+B.Gc=new A.j(0.7686274509803922,0,0,0,B.e)
 B.bu=new A.j(0.12156862745098039,0,0,0,B.e)
-B.Gd=new A.j(0.12156862745098039,1,1,1,B.e)
+B.Ge=new A.j(0.12156862745098039,1,1,1,B.e)
 B.T=new A.j(0.5411764705882353,0,0,0,B.e)
-B.Gg=new A.j(0.4470588235294118,0,0,0,B.e)
 B.jN=new A.j(0.4,0.7372549019607844,0.7372549019607844,0.7372549019607844,B.e)
 B.jO=new A.j(1,0,0.16470588235294117,1,B.e)
 B.Gk=new A.j(0.9411764705882353,0.7529411764705882,0.7529411764705882,0.7529411764705882,B.e)
@@ -97278,12 +97278,12 @@ B.Fy=new A.j(1,0.8117647058823529,0.8470588235294118,0.8627450980392157,B.e)
 B.GE=new A.j(1,0.6901960784313725,0.7450980392156863,0.7725490196078432,B.e)
 B.EK=new A.j(1,0.5647058823529412,0.6431372549019608,0.6823529411764706,B.e)
 B.Fb=new A.j(1,0.47058823529411764,0.5647058823529412,0.611764705882353,B.e)
-B.Gf=new A.j(1,0.3764705882352941,0.49019607843137253,0.5450980392156862,B.e)
+B.Gg=new A.j(1,0.3764705882352941,0.49019607843137253,0.5450980392156862,B.e)
 B.GL=new A.j(1,0.32941176470588235,0.43137254901960786,0.47843137254901963,B.e)
 B.FH=new A.j(1,0.27058823529411763,0.35294117647058826,0.39215686274509803,B.e)
 B.G5=new A.j(1,0.21568627450980393,0.2784313725490196,0.30980392156862746,B.e)
 B.GB=new A.j(1,0.14901960784313725,0.19607843137254902,0.2196078431372549,B.e)
-B.Pf=new A.bV([50,B.F2,100,B.Fy,200,B.GE,300,B.EK,400,B.Fb,500,B.Gf,600,B.GL,700,B.FH,800,B.G5,900,B.GB],t.pl)
+B.Pf=new A.bV([50,B.F2,100,B.Fy,200,B.GE,300,B.EK,400,B.Fb,500,B.Gg,600,B.GL,700,B.FH,800,B.G5,900,B.GB],t.pl)
 B.Px=new A.iC(B.Pf,1,0.3764705882352941,0.49019607843137253,0.5450980392156862,B.e)
 B.GR=new A.j(1,0.9098039215686274,0.9607843137254902,0.9137254901960784,B.e)
 B.Ex=new A.j(1,0.7843137254901961,0.9019607843137255,0.788235294117647,B.e)
@@ -97305,9 +97305,9 @@ B.F5=new A.j(1,0.6705882352941176,0.2784313725490196,0.7372549019607844,B.e)
 B.Ew=new A.j(1,0.611764705882353,0.15294117647058825,0.6901960784313725,B.e)
 B.GU=new A.j(1,0.5568627450980392,0.1411764705882353,0.6666666666666666,B.e)
 B.Fr=new A.j(1,0.4823529411764706,0.12156862745098039,0.6352941176470588,B.e)
-B.Gc=new A.j(1,0.41568627450980394,0.10588235294117647,0.6039215686274509,B.e)
+B.Gd=new A.j(1,0.41568627450980394,0.10588235294117647,0.6039215686274509,B.e)
 B.GW=new A.j(1,0.2901960784313726,0.0784313725490196,0.5490196078431373,B.e)
-B.Pi=new A.bV([50,B.EZ,100,B.ET,200,B.FY,300,B.Ek,400,B.F5,500,B.Ew,600,B.GU,700,B.Fr,800,B.Gc,900,B.GW],t.pl)
+B.Pi=new A.bV([50,B.EZ,100,B.ET,200,B.FY,300,B.Ek,400,B.F5,500,B.Ew,600,B.GU,700,B.Fr,800,B.Gd,900,B.GW],t.pl)
 B.cL=new A.iC(B.Pi,1,0.611764705882353,0.15294117647058825,0.6901960784313725,B.e)
 B.Py=new A.qM(0,"padded")
 B.Pz=new A.qM(1,"shrinkWrap")

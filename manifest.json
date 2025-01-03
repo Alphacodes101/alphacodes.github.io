@@ -1,6 +1,6 @@
 {
-    "name": "landingpage",
-    "short_name": "landingpage",
+    "name": "alphacodes",
+    "short_name": "alphacodes",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
