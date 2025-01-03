@@ -11407,15 +11407,16 @@ this.a=c},
 a3e:function a3e(){},
 a3f:function a3f(a){this.a=a},
 a3g:function a3g(a){this.a=a},
-aIH(a,b,c){return new A.BO(b,c,!1,null)},
+aIH(a,b,c,d){return new A.BO(b,d,c,!1,null)},
 aUL(){return new A.AX(new A.adL(),A.x(t.K,t.Qu))},
 aod:function aod(a,b){this.a=a
 this.b=b},
-BO:function BO(a,b,c,d){var _=this
+BO:function BO(a,b,c,d,e){var _=this
 _.e=a
-_.db=b
-_.R8=c
-_.a=d},
+_.cx=b
+_.db=c
+_.R8=d
+_.a=e},
 adL:function adL(){},
 agc:function agc(){},
 GZ:function GZ(){this.d=$
@@ -43790,7 +43791,7 @@ s.w=1},
 $S:0}
 A.Pl.prototype={
 F(a){var s=null
-return A.aIH(!1,B.UO,A.rX(s,A.aGD(B.ao,s,s,B.G2),s,s,!0))}}
+return A.aIH(!1,B.UO,A.rX(s,A.aGD(B.ao,s,s,B.G2),s,s,!0),"AlphaCodes")}}
 A.mo.prototype={
 a1(){return new A.Id()}}
 A.Id.prototype={
@@ -44268,7 +44269,8 @@ a1(){var s=null,r="assets/logo copy.png",q=t.A
 return new A.Wv(new A.bl(s,t.sW),A.w5(0,s,s),new A.bl(s,q),new A.bl(s,q),A.a([new A.l_("Rehyan Yadav","CEO (Software Engineer)","At Alpha Codes, we're shaping the future with cutting-edge Services like App /web Dev , Social Media Marketing.",r,"https://www.linkedin.com/in/rehyanyaduvanshi/"),new A.l_("Nandni Sharma","UI/UX","We're committed to delivering the best user experience with our innovative designs.","assets/members/nandni_sharma.png","https://www.linkedin.com/in/nandni-sharma-2b267a258/"),new A.l_("Koustubh verma","Video Editor","We're dedicated to creating engaging video content that captivates our audience.","assets/members/koustubh_verma.jpeg","https://www.linkedin.com/in/koustubh-verma/"),new A.l_(" Anuj Senapati ","Marketing","  We're passionate about helping businesses grow with our marketing strategies.",r,"/"),new A.l_("Debanskh Guha","CyberSecurity"," We're dedicated to protecting our clients' data with our cybersecurity solutions.","assets/members/Debanskh Guha.jpeg","https://www.linkedin.com/in/debanksh-guha/")],t.Hp),s,s)}}
 A.Wv.prototype={
 al(){this.aF()
-this.abZ()},
+this.abZ()
+document.title="Alpha Codes"},
 abZ(){var s,r=this,q=A.bv(null,B.ag,null,null,r)
 r.w!==$&&A.bn()
 r.w=q
@@ -44641,7 +44643,7 @@ o===$&&A.b()
 s=this.f
 s===$&&A.b()
 r=t.p
-return A.aIH(!1,A.ot(q,q,A.eQ(B.aR,A.a([B.BL,new A.dI(o,!1,A.akV(A.dr(A.c9(A.a([A.iv("assets/logo01.gif",B.jp,B.hH,B.mP,400,400),B.S,A.bi("ALPHA CODES",q,q,q,A.cB(q,q,B.f,q,q,q,q,q,A.aNv().$0().d,q,q,40,q,q,B.Z,q,q,!0,q,q,q,q,q,q,q,q),q,q)],r),B.m,B.a6,B.q),q,q),s),q)],r),B.D,B.US,q),q,q),p)}}
+return A.aIH(!1,A.ot(q,q,A.eQ(B.aR,A.a([B.BL,new A.dI(o,!1,A.akV(A.dr(A.c9(A.a([A.iv("assets/logo01.gif",B.jp,B.hH,B.mP,400,400),B.S,A.bi("ALPHA CODES",q,q,q,A.cB(q,q,B.f,q,q,q,q,q,A.aNv().$0().d,q,q,40,q,q,B.Z,q,q,!0,q,q,q,q,q,q,q,q),q,q)],r),B.m,B.a6,B.q),q,q),s),q)],r),B.D,B.US,q),q,q),p,"")}}
 A.axF.prototype={
 $0(){var s=this.a,r=s.c
 if(r!=null)A.bL(r,!1).vC(s.a6b(B.dv))},
@@ -44658,6 +44660,7 @@ a1(){return new A.TQ(null,null)}}
 A.TQ.prototype={
 al(){var s,r,q=this,p=null
 q.aF()
+document.title="Alpha Codes"
 s=A.bv(p,B.ch,p,p,q)
 s.Bw(0,!0)
 q.d!==$&&A.bn()
@@ -51230,14 +51233,15 @@ k.a.toString
 $.aNR()
 l=new A.yH(o,l,B.I,B.E,j,j)
 return new A.Du(A.a64(l,m,j,j,n),j)},
-a56(a){var s,r=this,q=null,p=r.a,o=p.db
-o=o.fr
-s=o
+a56(a){var s,r,q=this,p=null,o=q.a,n=o.db
+n=n.fr
+s=n
 if(s==null)s=B.o
-p=p.e
-o=r.gacw()
-r.a.toString
-return new A.Fj(q,q,q,new A.auz(),q,q,q,q,q,p,B.Pb,q,q,q,B.MM,r.gacC(),"",q,B.Xy,s,q,o,q,q,B.p4,!1,!1,q,q,q,new A.qh(r,t.bT))},
+n=o.e
+o=o.cx
+r=q.gacw()
+q.a.toString
+return new A.Fj(p,p,p,new A.auz(),p,p,p,p,p,n,B.Pb,p,p,p,B.MM,q.gacC(),o,p,B.Xy,s,p,r,p,p,B.p4,!1,!1,p,p,p,new A.qh(q,t.bT))},
 F(a){var s,r=null,q=A.nF(!1,!1,this.a56(a),r,r,r,r,!0,r,r,r,new A.auA(),r,r)
 this.a.toString
 s=this.d
