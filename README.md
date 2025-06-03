@@ -24,6 +24,6 @@ Ready to take your tech projects to the next level? Contact us today to discuss 
 
 - Email: codesalpha92@gmail.com
 - Phone: +91 8102448912
-- Website: [alphacodes.com](https://alphacodes101.github.io/alphacodes.com/)
+- Website: [alphacodes.tech](alphacodes.tech)
 
 Let us be your trusted tech partner and help you unlock your full potential!
