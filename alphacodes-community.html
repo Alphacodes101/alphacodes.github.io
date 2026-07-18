@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlphaCodes — Student Tech Community</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:#ffffff;
+  --off:#F7F5FF;
+  --bg:#FAFAF8;
+  --ink:#0A0A0F;
+  --ink2:#3A3A50;
+  --ink3:#8888A0;
+  --violet:#5B2EFF;
+  --violet-lt:#EDE8FF;
+  --orange:#FF5C1A;
+  --orange-lt:#FFF0EA;
+  --lime:#B8FF00;
+  --cyan:#00D4FF;
+  --pink:#FF2D7A;
+  --yellow:#FFD600;
+  --card-r:18px;
+  --card-r-lg:28px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Cabinet Grotesk',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+
+/* ── CUSTOM CURSOR ── */
+.cursor{position:fixed;width:12px;height:12px;background:var(--violet);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:multiply;}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--violet);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .12s ease;mix-blend-mode:multiply;}
+body:hover .cursor{opacity:1;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 6%;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,250,248,0.92);backdrop-filter:blur(16px);border-bottom:1.5px solid rgba(91,46,255,0.08);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-box{width:40px;height:40px;background:var(--violet);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:20px;color:var(--lime);letter-spacing:-1px;position:relative;overflow:hidden;}
+.logo-box::after{content:'';position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:rgba(184,255,0,0.3);border-radius:50%;}
+.logo-wordmark{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:20px;letter-spacing:-0.5px;color:var(--ink);}
+.logo-wordmark span{color:var(--violet);}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--ink2);font-size:15px;font-weight:600;transition:color .2s;}
+.nav-links a:hover{color:var(--violet);}
+.nav-btn{background:var(--violet);color:#fff;padding:10px 22px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:'Cabinet Grotesk',sans-serif;}
+.nav-btn:hover{background:var(--ink);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;padding:140px 6% 80px;position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero-bg-shape{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.hero-bg-shape.s1{width:700px;height:700px;background:rgba(91,46,255,0.07);top:-200px;right:-200px;}
+.hero-bg-shape.s2{width:500px;height:500px;background:rgba(255,92,26,0.06);bottom:-100px;left:-150px;}
+.hero-bg-shape.s3{width:300px;height:300px;background:rgba(184,255,0,0.1);top:40%;left:30%;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1260px;margin:0 auto;width:100%;position:relative;z-index:1;}
+.hero-left{animation:heroIn .8s cubic-bezier(.22,.68,0,1.2) both;}
+@keyframes heroIn{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--violet-lt);border:1.5px solid rgba(91,46,255,0.15);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:700;color:var(--violet);text-transform:uppercase;letter-spacing:1px;margin-bottom:24px;}
+.live-dot{width:7px;height:7px;background:var(--orange);border-radius:50%;animation:blink 1.4s ease infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero h1{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(46px,6vw,76px);font-weight:900;line-height:1.0;letter-spacing:-2.5px;margin-bottom:22px;color:var(--ink);}
+.hero h1 .hl{position:relative;display:inline-block;color:var(--violet);}
+.hero h1 .hl::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:6px;background:var(--lime);border-radius:3px;z-index:-1;}
+.hero h1 .hl2{color:var(--orange);}
+.hero-sub{font-size:18px;color:var(--ink2);line-height:1.7;margin-bottom:36px;max-width:500px;font-weight:500;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-big{display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:50px;font-family:'Cabinet Grotesk',sans-serif;font-size:16px;font-weight:800;text-decoration:none;border:none;cursor:pointer;transition:all .25s;}
+.btn-big.primary{background:var(--violet);color:#fff;}
+.btn-big.primary:hover{background:var(--ink);transform:translateY(-3px);box-shadow:0 16px 40px rgba(91,46,255,0.3);}
+.btn-big.outline{background:transparent;color:var(--ink);border:2px solid var(--ink);}
+.btn-big.outline:hover{background:var(--ink);color:#fff;transform:translateY(-3px);}
+.hero-trust{display:flex;align-items:center;gap:14px;}
+.trust-avatars{display:flex;}
+.trust-avatars .av{width:34px;height:34px;border-radius:50%;border:2.5px solid #fff;margin-left:-10px;first-child{margin-left:0};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;}
+.trust-avatars .av:first-child{margin-left:0;}
+.trust-text{font-size:13px;color:var(--ink2);font-weight:600;}
+.trust-text strong{color:var(--ink);}
+
+/* HERO RIGHT — floating cards */
+.hero-right{position:relative;height:520px;animation:heroIn .8s .15s cubic-bezier(.22,.68,0,1.2) both;}
+.float-card{position:absolute;background:#fff;border-radius:20px;border:1.5px solid rgba(0,0,0,0.07);box-shadow:0 8px 40px rgba(0,0,0,0.08);padding:18px 20px;transition:transform .4s ease;}
+.float-card:hover{transform:scale(1.04) rotate(0deg) !important;z-index:10;box-shadow:0 20px 60px rgba(0,0,0,0.14);}
+.fc1{top:0;left:10px;width:240px;transform:rotate(-3deg);animation:float1 5s ease-in-out infinite;}
+.fc2{top:90px;right:0;width:220px;transform:rotate(2.5deg);animation:float2 6s ease-in-out infinite;}
+.fc3{bottom:100px;left:0;width:250px;transform:rotate(1.5deg);animation:float3 5.5s ease-in-out infinite;}
+.fc4{bottom:0;right:20px;width:200px;transform:rotate(-2deg);animation:float1 7s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:rotate(-3deg) translateY(0);}50%{transform:rotate(-3deg) translateY(-10px);}}
+@keyframes float2{0%,100%{transform:rotate(2.5deg) translateY(0);}50%{transform:rotate(2.5deg) translateY(-8px);}}
+@keyframes float3{0%,100%{transform:rotate(1.5deg) translateY(0);}50%{transform:rotate(1.5deg) translateY(-12px);}}
+.fc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.fc-user{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.fc-av{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;}
+.fc-name{font-size:13px;font-weight:700;}
+.fc-role{font-size:11px;color:var(--ink3);}
+.fc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.fc-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 8px;border-radius:6px;font-weight:500;}
+.fc-stat{display:flex;align-items:center;justify-content:space-between;}
+.fc-stat-num{font-family:'Cabinet Grotesk',sans-serif;font-size:28px;font-weight:900;}
+.fc-stat-lbl{font-size:12px;color:var(--ink3);font-weight:600;}
+.fc-proj-title{font-size:14px;font-weight:800;margin-bottom:4px;}
+.fc-proj-sub{font-size:12px;color:var(--ink3);margin-bottom:10px;}
+.fc-proj-bar{height:5px;background:#eee;border-radius:5px;overflow:hidden;}
+.fc-proj-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--violet),var(--cyan));}
+
+/* ── MARQUEE ── */
+.marquee-wrap{padding:18px 0;background:var(--violet);overflow:hidden;position:relative;}
+.marquee-track{display:flex;gap:0;animation:marquee 22s linear infinite;white-space:nowrap;}
+.marquee-item{display:inline-flex;align-items:center;gap:10px;padding:0 28px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);}
+.marquee-item b{color:#fff;}
+.marquee-sep{color:var(--lime);font-size:18px;}
+
+/* ── SECTION BASE ── */
+.section{padding:100px 6%;position:relative;}
+.section.alt{background:var(--off);}
+.container{max-width:1260px;margin:0 auto;}
+.s-eyebrow{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--violet);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+.s-eyebrow::before{content:'';width:20px;height:2px;background:var(--violet);border-radius:2px;}
+.s-title{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:900;letter-spacing:-1.5px;line-height:1.08;margin-bottom:14px;}
+.s-sub{font-size:17px;color:var(--ink2);max-width:560px;line-height:1.7;font-weight:500;}
+
+/* ── FEATURES / CONNECT ── */
+.connect-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:64px;}
+.connect-visual{position:relative;}
+.connect-big-card{background:#fff;border-radius:28px;border:1.5px solid rgba(0,0,0,0.07);padding:32px;box-shadow:0 12px 60px rgba(0,0,0,0.07);}
+.cb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.cb-title{font-size:18px;font-weight:900;letter-spacing:-0.5px;}
+.cb-online{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink3);font-weight:600;}
+.cb-online-dot{width:7px;height:7px;background:#22C55E;border-radius:50%;animation:blink 2s ease infinite;}
+.student-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;transition:background .2s;cursor:default;margin-bottom:6px;}
+.student-row:hover{background:var(--off);}
+.s-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;}
+.s-info{flex:1;}
+.s-name{font-size:14px;font-weight:800;margin-bottom:2px;}
+.s-college{font-size:12px;color:var(--ink3);font-weight:500;}
+.s-skill-tags{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;}
+.s-skill{font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 7px;border-radius:5px;font-weight:500;}
+.s-connect-btn{padding:8px 14px;border-radius:50px;border:1.5px solid rgba(91,46,255,0.2);background:var(--violet-lt);color:var(--violet);font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:'Cabinet Grotesk',sans-serif;}
+.s-connect-btn:hover{background:var(--violet);color:#fff;}
+.connect-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.cpill{display:flex;align-items:center;gap:7px;padding:10px 16px;background:#fff;border:1.5px solid rgba(0,0,0,0.07);border-radius:50px;font-size:13px;font-weight:700;transition:all .2s;cursor:default;}
+.cpill:hover{border-color:var(--violet);color:var(--violet);}
+.cpill-dot{width:8px;height:8px;border-radius:50%;}
+.connect-text{}
+.connect-text .s-title{margin-bottom:20px;}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+.feature-list li{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:var(--ink2);font-weight:500;}
+.f-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+
+/* ── COURSES ── */
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:56px;}
+.course-card{background:#fff;border-radius:var(--card-r-lg);border:1.5px solid rgba(0,0,0,0.07);overflow:hidden;transition:all .3s;cursor:default;}
+.course-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.1);}
+.course-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden;}
+.course-thumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.05);}
+.course-body{padding:22px;}
+.course-track{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.course-title{font-size:17px;font-weight:900;letter-spacing:-0.3px;margin-bottom:6px;}
+.course-desc{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:16px;font-weight:500;}
+.course-meta{display:flex;align-items:center;justify-content:space-between;}
+.course-level{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;}
+.course-students{font-size:12px;color:var(--ink3);font-weight:600;}
+.level-dots{display:flex;gap:3px;}
+.ldot{width:8px;height:8px;border-radius:50%;background:#E0E0E0;}
+.ldot.on{background:var(--violet);}
+
+/* ── PROJECT SHOWCASE ── */
+.projects-section{background:var(--ink);}
+.projects-section .s-title,.projects-section .s-eyebrow,.projects-section .s-sub{color:#fff;}
+.projects-section .s-eyebrow{color:var(--lime);}
+.projects-section .s-eyebrow::before{background:var(--lime);}
+.projects-section .s-sub{color:rgba(255,255,255,0.6);}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;}
+.proj-card{background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.08);border-radius:var(--card-r-lg);padding:26px;transition:all .3s;cursor:default;}
+.proj-card:hover{background:rgba(255,255,255,0.09);border-color:rgba(255,255,255,0.15);transform:translateY(-4px);}
+.proj-card.featured{background:var(--violet);border-color:var(--violet);grid-column:span 2;}
+.proj-card.featured .proj-tag{background:rgba(255,255,255,0.2);color:#fff;}
+.proj-card.featured .proj-title,.proj-card.featured .proj-desc,.proj-card.featured .proj-author,.proj-card.featured .proj-stats span{color:#fff;}
+.proj-card.featured .proj-desc{color:rgba(255,255,255,0.8);}
+.proj-card.featured .proj-stats span{color:rgba(255,255,255,0.7);}
+.proj-card.featured .proj-author{color:rgba(255,255,255,0.8);}
+.proj-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;}
+.proj-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 10px;border-radius:6px;font-weight:500;}
+.proj-emoji{font-size:32px;}
+.proj-title{font-size:18px;font-weight:900;letter-spacing:-0.3px;margin-bottom:6px;color:#fff;}
+.proj-desc{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:18px;font-weight:500;}
+.proj-author{font-size:12px;color:rgba(255,255,255,0.5);font-weight:600;margin-bottom:12px;}
+.proj-stats{display:flex;gap:16px;}
+.proj-stats span{font-size:12px;color:rgba(255,255,255,0.5);font-weight:600;}
+.proj-stats b{color:rgba(255,255,255,0.85);}
+.view-all-row{text-align:center;margin-top:40px;}
+
+/* ── EVENTS ── */
+.events-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:56px;}
+.event-featured{background:#fff;border-radius:var(--card-r-lg);border:1.5px solid rgba(0,0,0,0.07);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.06);}
+.event-thumb{height:180px;display:flex;align-items:center;justify-content:center;position:relative;font-size:60px;}
+.event-thumb .event-badge{position:absolute;top:16px;left:16px;background:var(--orange);color:#fff;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;}
+.event-body{padding:24px;}
+.event-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);font-weight:500;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;}
+.event-title{font-size:20px;font-weight:900;letter-spacing:-0.5px;margin-bottom:8px;}
+.event-desc{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:18px;font-weight:500;}
+.event-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.event-stat{display:flex;align-items:center;gap:5px;font-size:13px;color:var(--ink3);font-weight:600;}
+.events-list{display:flex;flex-direction:column;gap:16px;}
+.event-mini{background:#fff;border-radius:var(--card-r);border:1.5px solid rgba(0,0,0,0.07);padding:18px 20px;display:flex;gap:16px;align-items:center;transition:all .2s;cursor:default;}
+.event-mini:hover{border-color:rgba(91,46,255,0.25);transform:translateX(4px);}
+.event-mini-date{min-width:48px;text-align:center;}
+.event-mini-day{font-size:26px;font-weight:900;line-height:1;color:var(--violet);}
+.event-mini-mon{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--ink3);}
+.event-mini-info{flex:1;}
+.event-mini-title{font-size:14px;font-weight:800;margin-bottom:3px;}
+.event-mini-sub{font-size:12px;color:var(--ink3);font-weight:500;}
+.event-mini-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 9px;border-radius:6px;white-space:nowrap;}
+
+/* ── APP DOWNLOAD ── */
+.app-section{background:linear-gradient(135deg,var(--violet) 0%,#3B1FCC 100%);overflow:hidden;position:relative;}
+.app-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:rgba(184,255,0,0.08);border-radius:50%;filter:blur(60px);}
+.app-section::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:rgba(0,212,255,0.08);border-radius:50%;filter:blur(60px);}
+.app-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
+.app-content .s-eyebrow{color:var(--lime);}
+.app-content .s-eyebrow::before{background:var(--lime);}
+.app-content .s-title{color:#fff;}
+.app-content .s-sub{color:rgba(255,255,255,0.75);}
+.app-features{list-style:none;margin:28px 0 36px;display:flex;flex-direction:column;gap:12px;}
+.app-features li{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:15px;font-weight:600;}
+.app-features li::before{content:'✓';width:22px;height:22px;background:var(--lime);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:11px;font-weight:900;flex-shrink:0;}
+.app-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.app-store-btn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:14px;padding:12px 20px;text-decoration:none;color:#fff;transition:all .2s;cursor:pointer;}
+.app-store-btn:hover{background:rgba(255,255,255,0.2);}
+.app-store-btn .asb-icon{font-size:24px;}
+.app-store-btn .asb-text{font-size:11px;opacity:0.7;margin-bottom:2px;}
+.app-store-btn .asb-name{font-size:15px;font-weight:800;}
+.notify-row{display:flex;gap:10px;max-width:400px;}
+.notify-inp{flex:1;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.2);border-radius:12px;padding:13px 16px;color:#fff;font-size:14px;font-family:'Cabinet Grotesk',sans-serif;outline:none;font-weight:600;}
+.notify-inp::placeholder{color:rgba(255,255,255,0.45);}
+.notify-inp:focus{border-color:var(--lime);}
+.notify-btn{background:var(--lime);color:var(--ink);border:none;border-radius:12px;padding:13px 20px;font-size:14px;font-weight:900;cursor:pointer;white-space:nowrap;font-family:'Cabinet Grotesk',sans-serif;transition:all .2s;}
+.notify-btn:hover{background:#d4ff00;transform:translateY(-1px);}
+.app-visual{display:flex;justify-content:center;gap:16px;align-items:flex-end;}
+.phone{width:180px;background:rgba(255,255,255,0.08);border-radius:36px;border:1.5px solid rgba(255,255,255,0.15);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.3);}
+.phone.big{width:200px;}
+.phone-top{height:28px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;}
+.phone-notch{width:60px;height:14px;background:rgba(0,0,0,0.4);border-radius:0 0 10px 10px;}
+.phone-body{padding:10px 12px;display:flex;flex-direction:column;gap:8px;}
+.p-card{background:rgba(255,255,255,0.08);border-radius:10px;padding:10px;}
+.p-card-row{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+.p-mini-av{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;}
+.p-mini-name{font-size:10px;font-weight:700;color:#fff;}
+.p-mini-time{font-size:9px;color:rgba(255,255,255,0.4);margin-left:auto;}
+.p-mini-text{font-size:9px;color:rgba(255,255,255,0.6);line-height:1.4;}
+.p-mini-tag{display:inline-block;margin-top:4px;font-size:8px;background:rgba(184,255,0,0.15);color:var(--lime);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;}
+.phone-bottom-bar{height:36px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-around;padding:0 8px;}
+.p-nav-icon{font-size:14px;opacity:0.4;}
+.p-nav-icon.active{opacity:1;}
+
+/* ── JOIN CTA ── */
+.join-section{padding:120px 6%;text-align:center;background:var(--bg);position:relative;overflow:hidden;}
+.join-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(91,46,255,0.07) 0%,transparent 70%);}
+.join-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.join-title{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(36px,5vw,62px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:18px;}
+.join-sub{font-size:18px;color:var(--ink2);margin-bottom:40px;font-weight:500;}
+.join-form{display:flex;gap:10px;max-width:440px;margin:0 auto 28px;}
+.join-inp{flex:1;background:#fff;border:1.5px solid rgba(0,0,0,0.12);border-radius:14px;padding:15px 18px;font-size:15px;font-family:'Cabinet Grotesk',sans-serif;font-weight:600;outline:none;color:var(--ink);transition:border-color .2s;}
+.join-inp:focus{border-color:var(--violet);}
+.join-inp::placeholder{color:var(--ink3);}
+.join-or{display:flex;align-items:center;gap:16px;max-width:440px;margin:0 auto 24px;color:var(--ink3);font-size:13px;font-weight:700;}
+.join-or::before,.join-or::after{content:'';flex:1;height:1px;background:rgba(0,0,0,0.1);}
+.social-join{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.sj-btn{display:flex;align-items:center;gap:8px;padding:12px 22px;background:#fff;border:1.5px solid rgba(0,0,0,0.1);border-radius:12px;font-size:14px;font-weight:800;text-decoration:none;color:var(--ink);transition:all .2s;}
+.sj-btn:hover{border-color:var(--violet);color:var(--violet);transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:64px 6% 32px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1260px;margin:0 auto 48px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;margin-top:14px;max-width:260px;font-weight:500;}
+.footer-col h5{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.35);margin-bottom:18px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.footer-col ul a{text-decoration:none;font-size:14px;color:rgba(255,255,255,0.6);font-weight:600;transition:color .2s;}
+.footer-col ul a:hover{color:var(--lime);}
+.footer-bottom{max-width:1260px;margin:0 auto;padding-top:28px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:600;}
+.footer-socials{display:flex;gap:10px;}
+.fs-link{width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all .2s;}
+.fs-link:hover{background:var(--violet);border-color:var(--violet);}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:28px;right:28px;background:#fff;border:1.5px solid rgba(91,46,255,0.2);border-radius:14px;padding:14px 20px;font-size:14px;font-weight:700;color:var(--ink);z-index:9999;display:flex;align-items:center;gap:10px;box-shadow:0 8px 40px rgba(0,0,0,0.12);transform:translateY(80px);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);}
+.toast.show{transform:translateY(0);opacity:1;}
+.t-check{width:22px;height:22px;background:var(--violet);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex-shrink:0;}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-grid,.connect-grid,.app-inner,.events-grid{grid-template-columns:1fr;}
+  .hero-right,.app-visual{display:none;}
+  .projects-grid{grid-template-columns:1fr 1fr;}
+  .proj-card.featured{grid-column:span 2;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .hamburger{display:flex;}
+  .nav-links{display:none;}
+}
+@media(max-width:600px){
+  .projects-grid{grid-template-columns:1fr;}
+  .proj-card.featured{grid-column:span 1;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero-actions,.join-form,.notify-row{flex-direction:column;}
+  .section{padding:72px 5%;}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-box">α</div>
+    <span class="logo-wordmark">Alpha<span>Codes</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#connect">Connect</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#app">App</a></li>
+  </ul>
+  <a href="#join" class="nav-btn">Join Free →</a>
+  <div class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-shape s1"></div>
+  <div class="hero-bg-shape s2"></div>
+  <div class="hero-bg-shape s3"></div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span class="live-dot"></span> Open Community — Students Welcome</div>
+      <h1>Build. Connect.<br><span class="hl">Ship</span> Real<br><span class="hl2">Projects.</span></h1>
+      <p class="hero-sub">AlphaCodes is India's boldest student tech community — where coders, designers & founders connect, learn together, and launch their first real apps.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-big primary">🚀 Join AlphaCodes Free</a>
+        <a href="#projects" class="btn-big outline">See Projects →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <div class="av" style="background:#EDE8FF;color:var(--violet);">RA</div>
+          <div class="av" style="background:#FFF0EA;color:var(--orange);">SK</div>
+          <div class="av" style="background:#ECFDF5;color:#059669;">NP</div>
+          <div class="av" style="background:#FEF9C3;color:#CA8A04;">AK</div>
+          <div class="av" style="background:#FCE7F3;color:#DB2777;">PS</div>
+        </div>
+        <p class="trust-text"><strong>2,400+ students</strong> already building together</p>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="float-card fc1">
+        <div class="fc-label" style="color:var(--violet);">👤 New Member</div>
+        <div class="fc-user">
+          <div class="fc-av" style="background:#EDE8FF;color:var(--violet);">RA</div>
+          <div><div class="fc-name">Riya Agarwal</div><div class="fc-role">VIT Vellore · Web Dev</div></div>
+        </div>
+        <div class="fc-tags">
+          <div class="fc-tag" style="background:#EDE8FF;color:var(--violet);">React</div>
+          <div class="fc-tag" style="background:#FFF0EA;color:var(--orange);">Node</div>
+          <div class="fc-tag" style="background:#ECFDF5;color:#059669;">MongoDB</div>
+        </div>
+      </div>
+      <div class="float-card fc2">
+        <div class="fc-stat">
+          <div><div class="fc-stat-num" style="color:var(--violet);">180+</div><div class="fc-stat-lbl">Projects Shipped</div></div>
+          <div style="font-size:36px;">🚀</div>
+        </div>
+      </div>
+      <div class="float-card fc3">
+        <div class="fc-label" style="color:var(--orange);">🔥 Trending Project</div>
+        <div class="fc-proj-title">EduTrack — AI Study Planner</div>
+        <div class="fc-proj-sub">by Arjun Kumar · IIT Delhi</div>
+        <div class="fc-proj-bar"><div class="fc-proj-fill" style="width:74%;"></div></div>
+        <div style="font-size:11px;color:var(--ink3);margin-top:5px;font-weight:600;">74% complete · 12 contributors</div>
+      </div>
+      <div class="float-card fc4">
+        <div class="fc-label" style="color:#059669;">📅 Upcoming Event</div>
+        <div class="fc-proj-title">48hr Hackathon</div>
+        <div class="fc-proj-sub">Jun 15 · 340 registered</div>
+        <div style="margin-top:8px;"><span style="background:#ECFDF5;color:#059669;font-size:11px;font-weight:800;padding:4px 10px;border-radius:6px;">Register Free</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="mq">
+    <div class="marquee-item"><b>React</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Next.js</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Python</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Flutter</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Node.js</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>AI / ML</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Web3</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>DevOps</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Rust</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Go</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>TypeScript</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Hackathons</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Open Source</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>React</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Next.js</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Python</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Flutter</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Node.js</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>AI / ML</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Web3</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>DevOps</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Rust</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Go</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>TypeScript</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Hackathons</b> <span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><b>Open Source</b> <span class="marquee-sep">✦</span></div>
+  </div>
+</div>
+
+<!-- STUDENT CONNECT -->
+<section class="section" id="connect">
+  <div class="container">
+    <div class="connect-grid">
+      <div class="connect-visual reveal">
+        <div class="connect-big-card">
+          <div class="cb-header">
+            <div class="cb-title">Find Your Tribe 🔥</div>
+            <div class="cb-online"><span class="cb-online-dot"></span>248 online now</div>
+          </div>
+          <div class="student-row">
+            <div class="s-av" style="background:#EDE8FF;color:var(--violet);">AK</div>
+            <div class="s-info">
+              <div class="s-name">Arjun Kumar</div>
+              <div class="s-college">IIT Delhi · AI/ML</div>
+              <div class="s-skill-tags">
+                <span class="s-skill" style="background:#EDE8FF;color:var(--violet);">PyTorch</span>
+                <span class="s-skill" style="background:#FFF0EA;color:var(--orange);">FastAPI</span>
+              </div>
+            </div>
+            <button class="s-connect-btn">Connect +</button>
+          </div>
+          <div class="student-row">
+            <div class="s-av" style="background:#ECFDF5;color:#059669;">PS</div>
+            <div class="s-info">
+              <div class="s-name">Priya Sharma</div>
+              <div class="s-college">NIT Trichy · Mobile Dev</div>
+              <div class="s-skill-tags">
+                <span class="s-skill" style="background:#ECFDF5;color:#059669;">Flutter</span>
+                <span class="s-skill" style="background:#EDE8FF;color:var(--violet);">Firebase</span>
+              </div>
+            </div>
+            <button class="s-connect-btn">Connect +</button>
+          </div>
+          <div class="student-row">
+            <div class="s-av" style="background:#FEF9C3;color:#CA8A04;">MR</div>
+            <div class="s-info">
+              <div class="s-name">Mohan Rao</div>
+              <div class="s-college">BITS Pilani · Backend</div>
+              <div class="s-skill-tags">
+                <span class="s-skill" style="background:#FEF9C3;color:#CA8A04;">Go</span>
+                <span class="s-skill" style="background:#F3F4F6;color:#374151;">PostgreSQL</span>
+              </div>
+            </div>
+            <button class="s-connect-btn">Connect +</button>
+          </div>
+          <div class="student-row">
+            <div class="s-av" style="background:#FCE7F3;color:#DB2777;">NP</div>
+            <div class="s-info">
+              <div class="s-name">Neha Patel</div>
+              <div class="s-college">NSIT Delhi · Full-Stack</div>
+              <div class="s-skill-tags">
+                <span class="s-skill" style="background:#FCE7F3;color:#DB2777;">React</span>
+                <span class="s-skill" style="background:#FFF0EA;color:var(--orange);">Node</span>
+              </div>
+            </div>
+            <button class="s-connect-btn">Connect +</button>
+          </div>
+        </div>
+        <div class="connect-pills" style="margin-top:18px;">
+          <div class="cpill"><span class="cpill-dot" style="background:var(--violet);"></span>Web Dev</div>
+          <div class="cpill"><span class="cpill-dot" style="background:var(--orange);"></span>AI / ML</div>
+          <div class="cpill"><span class="cpill-dot" style="background:#059669;"></span>Mobile</div>
+          <div class="cpill"><span class="cpill-dot" style="background:var(--cyan);"></span>DevOps</div>
+          <div class="cpill"><span class="cpill-dot" style="background:var(--pink);"></span>Web3</div>
+          <div class="cpill"><span class="cpill-dot" style="background:#CA8A04;"></span>Design</div>
+        </div>
+      </div>
+      <div class="connect-text reveal">
+        <div class="s-eyebrow">Student Connect</div>
+        <h2 class="s-title">Find peers who code like you</h2>
+        <p class="s-sub">Stop learning alone. Connect with students from 40+ colleges, filter by skill and domain, and build together from day one.</p>
+        <ul class="feature-list">
+          <li>
+            <div class="f-icon" style="background:#EDE8FF;">🎯</div>
+            <span>Smart matching by tech stack, college & interests</span>
+          </li>
+          <li>
+            <div class="f-icon" style="background:#FFF0EA;">💬</div>
+            <span>Private DMs + group channels by domain & language</span>
+          </li>
+          <li>
+            <div class="f-icon" style="background:#ECFDF5;">🤝</div>
+            <span>Co-founder matching for project collabs</span>
+          </li>
+          <li>
+            <div class="f-icon" style="background:#FEF9C3;">🏆</div>
+            <span>Leaderboard, streaks & community recognition</span>
+          </li>
+        </ul>
+        <a href="#join" class="btn-big primary" style="margin-top:32px;width:fit-content;">Join & Connect →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section alt" id="courses">
+  <div class="container">
+    <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <div>
+        <div class="s-eyebrow">Learning Tracks</div>
+        <h2 class="s-title">Courses built by<br>students, for students</h2>
+      </div>
+      <a href="#join" class="btn-big outline" style="margin-bottom:14px;">Browse All Tracks →</a>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#EDE8FF,#C4B5FD);">🌐</div>
+        <div class="course-body">
+          <div class="course-track" style="color:var(--violet);">Web Development</div>
+          <div class="course-title">Full-Stack Web from Zero</div>
+          <div class="course-desc">HTML to React to Node — build and deploy your first full web app in 8 weeks.</div>
+          <div class="course-meta">
+            <div class="course-level">
+              <div class="level-dots">
+                <div class="ldot on"></div><div class="ldot on"></div><div class="ldot"></div>
+              </div>
+              Intermediate
+            </div>
+            <div class="course-students">👥 1,240 enrolled</div>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#FFF0EA,#FDB896);">🤖</div>
+        <div class="course-body">
+          <div class="course-track" style="color:var(--orange);">AI / Machine Learning</div>
+          <div class="course-title">ML Crash Course</div>
+          <div class="course-desc">Go from Python basics to training your first neural network with real datasets.</div>
+          <div class="course-meta">
+            <div class="course-level">
+              <div class="level-dots">
+                <div class="ldot on"></div><div class="ldot"></div><div class="ldot"></div>
+              </div>
+              Beginner
+            </div>
+            <div class="course-students">👥 980 enrolled</div>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#ECFDF5,#6EE7B7);">📱</div>
+        <div class="course-body">
+          <div class="course-track" style="color:#059669;">Mobile Development</div>
+          <div class="course-title">Flutter App Bootcamp</div>
+          <div class="course-desc">Build cross-platform mobile apps for Android & iOS with Dart and Flutter.</div>
+          <div class="course-meta">
+            <div class="course-level">
+              <div class="level-dots">
+                <div class="ldot on"></div><div class="ldot on"></div><div class="ldot"></div>
+              </div>
+              Intermediate
+            </div>
+            <div class="course-students">👥 620 enrolled</div>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#FEF9C3,#FDE68A);">⚡</div>
+        <div class="course-body">
+          <div class="course-track" style="color:#CA8A04;">DSA & Competitive</div>
+          <div class="course-title">DSA Master Plan</div>
+          <div class="course-desc">Crack placement interviews — arrays to graphs, DP to system design. 200+ problems.</div>
+          <div class="course-meta">
+            <div class="course-level">
+              <div class="level-dots">
+                <div class="ldot on"></div><div class="ldot on"></div><div class="ldot on"></div>
+              </div>
+              Advanced
+            </div>
+            <div class="course-students">👥 1,580 enrolled</div>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#E0F2FE,#7DD3FC);">☁️</div>
+        <div class="course-body">
+          <div class="course-track" style="color:#0284C7;">DevOps & Cloud</div>
+          <div class="course-title">Deploy like a Pro</div>
+          <div class="course-desc">Docker, CI/CD, AWS basics — ship your project to production in the right way.</div>
+          <div class="course-meta">
+            <div class="course-level">
+              <div class="level-dots">
+                <div class="ldot on"></div><div class="ldot on"></div><div class="ldot"></div>
+              </div>
+              Intermediate
+            </div>
+            <div class="course-students">👥 440 enrolled</div>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#FCE7F3,#F9A8D4);">🎨</div>
+        <div class="course-body">
+          <div class="course-track" style="color:#DB2777;">UI/UX Design</div>
+          <div class="course-title">Design for Developers</div>
+          <div class="course-desc">Figma, design systems, and user research — make your apps look as good as they work.</div>
+          <div class="course-meta">
+            <div class="course-level">
+              <div class="level-dots">
+                <div class="ldot on"></div><div class="ldot"></div><div class="ldot"></div>
+              </div>
+              Beginner
+            </div>
+            <div class="course-students">👥 390 enrolled</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SHOWCASE -->
+<section class="section projects-section" id="projects">
+  <div class="container">
+    <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <div>
+        <div class="s-eyebrow">Project Showcase</div>
+        <h2 class="s-title">Real apps.<br>Built by students.</h2>
+        <p class="s-sub">From weekend hacks to full products — every project here was shipped by someone like you.</p>
+      </div>
+      <a href="#join" class="btn-big" style="background:var(--lime);color:var(--ink);margin-bottom:14px;">Submit Your Project →</a>
+    </div>
+    <div class="projects-grid">
+      <div class="proj-card featured reveal">
+        <div class="proj-top">
+          <span class="proj-tag" style="background:rgba(255,255,255,0.2);color:#fff;">⭐ Featured</span>
+          <div style="font-size:44px;">🎓</div>
+        </div>
+        <div class="proj-title">EduTrack — AI Study Planner</div>
+        <div class="proj-desc">An AI-powered study planner that adapts to your exam schedule and learning pace. Used by 1,200+ students across 15 colleges.</div>
+        <div class="proj-author">by Arjun Kumar & team (IIT Delhi)</div>
+        <div class="proj-stats">
+          <span>⭐ <b>486</b> stars</span>
+          <span>🍴 <b>120</b> forks</span>
+          <span>👥 <b>12</b> contributors</span>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-tag" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);">Mobile App</span>
+          <div style="font-size:36px;">💪</div>
+        </div>
+        <div class="proj-title">FitBuddy</div>
+        <div class="proj-desc">Track workouts, share progress with hostel mates, and stay accountable.</div>
+        <div class="proj-author">by Priya Sharma (NIT Trichy)</div>
+        <div class="proj-stats">
+          <span>⭐ <b>214</b></span>
+          <span>📥 <b>800+</b> downloads</span>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-tag" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);">Web App</span>
+          <div style="font-size:36px;">💼</div>
+        </div>
+        <div class="proj-title">InterviewPrep.io</div>
+        <div class="proj-desc">Peer-to-peer mock interview platform with AI feedback on your answers.</div>
+        <div class="proj-author">by Riya & Mohan (VIT + BITS)</div>
+        <div class="proj-stats">
+          <span>⭐ <b>332</b></span>
+          <span>👥 <b>500+</b> users</span>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-tag" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);">Chrome Ext.</span>
+          <div style="font-size:36px;">🧩</div>
+        </div>
+        <div class="proj-title">FocusCoder</div>
+        <div class="proj-desc">Chrome extension that blocks distractions and tracks deep work sessions for coders.</div>
+        <div class="proj-author">by Neha Patel (NSIT Delhi)</div>
+        <div class="proj-stats">
+          <span>⭐ <b>178</b></span>
+          <span>📥 <b>2k+</b> installs</span>
+        </div>
+      </div>
+    </div>
+    <div class="view-all-row reveal">
+      <a href="#join" class="btn-big outline" style="border-color:rgba(255,255,255,0.2);color:#fff;">View All 180+ Projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS & HACKATHONS -->
+<section class="section" id="events">
+  <div class="container">
+    <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <div>
+        <div class="s-eyebrow">Events & Hackathons</div>
+        <h2 class="s-title">Compete. Build.<br>Win together.</h2>
+        <p class="s-sub">Weekly challenges, monthly hackathons, and live workshops — all free for members.</p>
+      </div>
+      <a href="#join" class="btn-big primary" style="margin-bottom:14px;">See All Events →</a>
+    </div>
+    <div class="events-grid">
+      <div class="event-featured reveal">
+        <div class="event-thumb" style="background:linear-gradient(135deg,#EDE8FF 0%,#BFDBFE 100%);">
+          ⚡
+          <div class="event-badge">NEXT UP</div>
+        </div>
+        <div class="event-body">
+          <div class="event-date">June 15–16, 2025 · Online</div>
+          <h3 class="event-title">AlphaHack 48 — Summer Edition</h3>
+          <p class="event-desc">48 hours. One problem. Unlimited creativity. Build anything that helps students — top 3 projects win ₹50,000 in prizes and mentorship from industry leaders.</p>
+          <div class="event-meta">
+            <div class="event-stat">🏆 <strong>₹50K</strong> Prizes</div>
+            <div class="event-stat">👥 340 registered</div>
+            <div class="event-stat">⏳ 12 days left</div>
+          </div>
+          <a href="#join" class="btn-big primary" style="margin-top:20px;width:fit-content;font-size:14px;padding:13px 24px;">Register Free →</a>
+        </div>
+      </div>
+      <div class="events-list">
+        <div class="event-mini reveal">
+          <div class="event-mini-date"><div class="event-mini-day">08</div><div class="event-mini-mon">Jun</div></div>
+          <div class="event-mini-info">
+            <div class="event-mini-title">DSA Weekly Challenge #42</div>
+            <div class="event-mini-sub">Graphs & DP · 180 participants</div>
+          </div>
+          <span class="event-mini-tag" style="background:#EDE8FF;color:var(--violet);">Free</span>
+        </div>
+        <div class="event-mini reveal">
+          <div class="event-mini-date"><div class="event-mini-day">12</div><div class="event-mini-mon">Jun</div></div>
+          <div class="event-mini-info">
+            <div class="event-mini-title">Live Workshop: Ship with Next.js</div>
+            <div class="event-mini-sub">by Rahul Singh, ex-Vercel · 2 hrs</div>
+          </div>
+          <span class="event-mini-tag" style="background:#FFF0EA;color:var(--orange);">Live</span>
+        </div>
+        <div class="event-mini reveal">
+          <div class="event-mini-date"><div class="event-mini-day">22</div><div class="event-mini-mon">Jun</div></div>
+          <div class="event-mini-info">
+            <div class="event-mini-title">AI/ML Showcase Day</div>
+            <div class="event-mini-sub">Student project demos · Online</div>
+          </div>
+          <span class="event-mini-tag" style="background:#ECFDF5;color:#059669;">Demo</span>
+        </div>
+        <div class="event-mini reveal">
+          <div class="event-mini-date"><div class="event-mini-day">01</div><div class="event-mini-mon">Jul</div></div>
+          <div class="event-mini-info">
+            <div class="event-mini-title">Open Source Sprint Weekend</div>
+            <div class="event-mini-sub">Contribute to 10+ projects · 48hrs</div>
+          </div>
+          <span class="event-mini-tag" style="background:#FEF9C3;color:#CA8A04;">Sprint</span>
+        </div>
+        <div class="event-mini reveal">
+          <div class="event-mini-date"><div class="event-mini-day">10</div><div class="event-mini-mon">Jul</div></div>
+          <div class="event-mini-info">
+            <div class="event-mini-title">Career AMA: FAANG Engineers</div>
+            <div class="event-mini-sub">Ask anything · Live Q&A session</div>
+          </div>
+          <span class="event-mini-tag" style="background:#FCE7F3;color:#DB2777;">AMA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP DOWNLOAD -->
+<section class="section app-section" id="app">
+  <div class="container">
+    <div class="app-inner">
+      <div class="app-content reveal">
+        <div class="s-eyebrow">Mobile App — Coming Soon</div>
+        <h2 class="s-title">Your community,<br>in your pocket</h2>
+        <p class="s-sub" style="margin-bottom:0;">The AlphaCodes app brings your entire student network, courses, projects, and events to iOS & Android.</p>
+        <ul class="app-features">
+          <li>Real-time community feed & direct messages</li>
+          <li>Course progress tracking on the go</li>
+          <li>Project room collaboration & code sharing</li>
+          <li>Event reminders & hackathon countdowns</li>
+          <li>Peer connect & co-founder matching</li>
+        </ul>
+        <div class="app-btns">
+          <div class="app-store-btn"><span class="asb-icon">🍎</span><div><div class="asb-text">Download on the</div><div class="asb-name">App Store</div></div></div>
+          <div class="app-store-btn"><span class="asb-icon">▶️</span><div><div class="asb-text">Get it on</div><div class="asb-name">Google Play</div></div></div>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:12px;font-weight:600;">Or get early access — join the waitlist:</p>
+        <div class="notify-row">
+          <input type="email" class="notify-inp" placeholder="your@email.com" id="appEmail">
+          <button class="notify-btn" onclick="notifyMe()">Notify Me</button>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:10px;font-weight:600;">800+ students already on the waitlist 🔥</p>
+      </div>
+      <div class="app-visual reveal">
+        <div class="phone" style="margin-bottom:40px;">
+          <div class="phone-top"><div class="phone-notch"></div></div>
+          <div class="phone-body">
+            <div class="p-card">
+              <div class="p-card-row">
+                <div class="p-mini-av" style="background:rgba(91,46,255,0.3);color:#C4B5FD;">R</div>
+                <span class="p-mini-name">Riya A.</span>
+                <span class="p-mini-time">2m</span>
+              </div>
+              <div class="p-mini-text">Just shipped my portfolio — check it out 🚀</div>
+              <div class="p-mini-tag">#web-dev</div>
+            </div>
+            <div class="p-card">
+              <div class="p-card-row">
+                <div class="p-mini-av" style="background:rgba(255,92,26,0.3);color:#FDB896;">A</div>
+                <span class="p-mini-name">Arjun K.</span>
+                <span class="p-mini-time">5m</span>
+              </div>
+              <div class="p-mini-text">Model acc: 94.2%! Training complete 🔥</div>
+              <div class="p-mini-tag">#ai-ml</div>
+            </div>
+            <div class="p-card">
+              <div class="p-card-row">
+                <div class="p-mini-av" style="background:rgba(0,212,255,0.2);color:#67E8F9;">N</div>
+                <span class="p-mini-name">Neha P.</span>
+                <span class="p-mini-time">8m</span>
+              </div>
+              <div class="p-mini-text">Anyone for AlphaHack team? I do backend 🙋</div>
+              <div class="p-mini-tag">#hackathon</div>
+            </div>
+          </div>
+          <div class="phone-bottom-bar">
+            <span class="p-nav-icon active">🏠</span>
+            <span class="p-nav-icon">🔍</span>
+            <span class="p-nav-icon">💬</span>
+            <span class="p-nav-icon">👤</span>
+          </div>
+        </div>
+        <div class="phone big" style="margin-bottom:0;">
+          <div class="phone-top"><div class="phone-notch"></div></div>
+          <div class="phone-body">
+            <div class="p-card" style="background:rgba(184,255,0,0.08);">
+              <div style="font-size:9px;color:var(--lime);font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">⚡ AlphaHack 48</div>
+              <div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:3px;">12 days remaining</div>
+              <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;"><div style="width:30%;height:100%;background:var(--lime);border-radius:4px;"></div></div>
+            </div>
+            <div class="p-card">
+              <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:5px;font-weight:700;">YOUR STREAK</div>
+              <div style="font-size:22px;font-weight:900;color:#fff;line-height:1;">🔥 14 days</div>
+              <div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px;">Keep going!</div>
+            </div>
+            <div class="p-card">
+              <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:8px;font-weight:700;">NEXT LESSON</div>
+              <div style="font-size:11px;font-weight:800;color:#fff;margin-bottom:3px;">React Hooks Deep Dive</div>
+              <div style="font-size:9px;color:rgba(255,255,255,0.4);">Web Dev Track · 24 min</div>
+            </div>
+          </div>
+          <div class="phone-bottom-bar">
+            <span class="p-nav-icon">🏠</span>
+            <span class="p-nav-icon active">📚</span>
+            <span class="p-nav-icon">💬</span>
+            <span class="p-nav-icon">👤</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN CTA -->
+<section class="join-section" id="join">
+  <div class="join-inner reveal">
+    <div class="s-eyebrow" style="justify-content:center;margin-bottom:18px;">Ready to join?</div>
+    <h2 class="join-title">Your tribe is<br>waiting. <span style="color:var(--violet);">It's free.</span></h2>
+    <p class="join-sub">2,400+ students are already building, connecting, and shipping. One click to join them.</p>
+    <div class="join-form">
+      <input type="email" class="join-inp" placeholder="Enter your college email" id="joinEmail">
+      <button class="btn-big primary" onclick="joinNow()" style="border-radius:14px;white-space:nowrap;">Join Free →</button>
+    </div>
+    <div class="join-or">or join via</div>
+    <div class="social-join">
+      <a href="#" class="sj-btn">💬 Discord</a>
+      <a href="#" class="sj-btn">🐙 GitHub</a>
+      <a href="#" class="sj-btn">📸 Instagram</a>
+      <a href="#" class="sj-btn">💼 LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="text-decoration:none;display:flex;align-items:center;gap:10px;">
+        <div class="logo-box">α</div>
+        <span class="logo-wordmark" style="color:#fff;">Alpha<span style="color:var(--lime);">Codes</span></span>
+      </div>
+      <p>A student-first tech community. Build, connect, and ship — together. 🇮🇳</p>
+      <div class="footer-socials" style="margin-top:20px;">
+        <a href="#" class="fs-link">💬</a>
+        <a href="#" class="fs-link">🐙</a>
+        <a href="#" class="fs-link">📸</a>
+        <a href="#" class="fs-link">🐦</a>
+        <a href="#" class="fs-link">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Community</h5>
+      <ul>
+        <li><a href="#">Student Connect</a></li>
+        <li><a href="#">Project Rooms</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Showcase</a></li>
+        <li><a href="#">Discord</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Learn</h5>
+      <ul>
+        <li><a href="#">All Courses</a></li>
+        <li><a href="#">Roadmaps</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 AlphaCodes. Built by students, for students.</span>
+    <span class="footer-copy">Made with ❤️ in India</span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="t-check">✓</div>
+  <span id="toastTxt">You're in! Welcome to AlphaCodes 🚀</span>
+</div>
+
+<script>
+// Custom cursor
+const cur = document.getElementById('cur'), curR = document.getElementById('curR');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px';
+  setTimeout(() => { curR.style.left = e.clientX + 'px'; curR.style.top = e.clientY + 'px'; }, 80);
+});
+document.querySelectorAll('a,button,.s-connect-btn,.course-card,.proj-card,.event-mini').forEach(el => {
+  el.addEventListener('mouseenter', () => { cur.style.width = '20px'; cur.style.height = '20px'; curR.style.width = '50px'; curR.style.height = '50px'; });
+  el.addEventListener('mouseleave', () => { cur.style.width = '12px'; cur.style.height = '12px'; curR.style.width = '36px'; curR.style.height = '36px'; });
+});
+
+// Reveal on scroll
+const revEls = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('on'), i * 70); });
+}, { threshold: 0.1 });
+revEls.forEach(el => ro.observe(el));
+
+// Toast
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastTxt').textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3800);
+}
+
+function joinNow() {
+  const v = document.getElementById('joinEmail').value;
+  if (!v || !v.includes('@')) { showToast('⚠️ Enter a valid email address.'); return; }
+  document.getElementById('joinEmail').value = '';
+  showToast('🎉 Welcome to AlphaCodes! Check your inbox.');
+}
+
+function notifyMe() {
+  const v = document.getElementById('appEmail').value;
+  if (!v || !v.includes('@')) { showToast('⚠️ Enter a valid email address.'); return; }
+  document.getElementById('appEmail').value = '';
+  showToast('📱 You\'re on the waitlist! We\'ll notify you at launch.');
+}
+
+document.getElementById('joinEmail').addEventListener('keypress', e => { if (e.key === 'Enter') joinNow(); });
+document.getElementById('appEmail').addEventListener('keypress', e => { if (e.key === 'Enter') notifyMe(); });
+
+// Nav mobile toggle
+function toggleNav() {
+  const nl = document.getElementById('navLinks');
+  if (nl.style.display === 'flex') { nl.style.display = ''; }
+  else { nl.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:#fff;padding:20px 6%;border-bottom:2px solid #eee;gap:18px;z-index:199;box-shadow:0 8px 30px rgba(0,0,0,0.08);'; }
+}
+
+// Nav scroll shrink
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.height = window.scrollY > 60 ? '60px' : '70px';
+});
+
+// Connect buttons
+document.querySelectorAll('.s-connect-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.textContent = '✓ Connected!';
+    btn.style.background = 'var(--violet)';
+    btn.style.color = '#fff';
+    btn.style.borderColor = 'var(--violet)';
+    showToast('🤝 Connection request sent!');
+  });
+});
+</script>
+</body>
+</html>
